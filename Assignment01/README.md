@@ -20,7 +20,7 @@
 
 1-gram模型假设一句句子的每个词的出现都是独立的，因此一句话产生的概率即为所有词在语料库中出现概率之积：
 
- ![](http://latex.codecogs.com/gif.latex?\\P(sentence)=P(w_1\cdot w_2\cdots w_n) = \prod_{i=1}^{n} \frac{count(w_i)}{\sum_{\forall k}count(w_k)}) 
+ ![](http://latex.codecogs.com/gif.latex?\\P(sentence)=P(w_1\cdotw_2\cdotsw_n)=\prod_{i=1}^{n}\frac{count(w_i)}{\sum_{\forall k}count(w_k)}) 
 
 其中k为语料库中的Token数目
 
