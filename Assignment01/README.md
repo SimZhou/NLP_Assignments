@@ -28,7 +28,7 @@
 
 2-gram模型假设一句句子中的每一个词的出现依赖且仅依赖于上一个词，因此有：
 
-![](http://latex.codecogs.com/gif.latex?P(sentence)\\=P(w_1\cdot{w_2}\cdots{w_n})\\=P(w_n|w_1\cdots{w_{n-1}})\cdot{P(w_1\cdots{w_{n-1}})}\\=P(w_n|w_1\cdots{w_{n-1}})\cdot{P(w_{n-1}|w_1\cdots{w_{n-2}})}\cdot{P(w_1\cdots{w_{n-2}})}\\=P(w_{n}|w_1\cdots{w_{n-1}})\cdot{P(w_{n-1}|w_{1}\cdots{w_{n-2}})}\cdot{P(w_{n-2}|w_1\cdots{w_{n-1}})}\cdots{P(w_2|w_1)\cdot{P(w_1)}}\\=P(w_1)\cdot{P(w_2|w_1)}\cdot{P(w_3|w_2)}\cdot{P(w_4|w_3)}\cdots{P(w_{n-1}|w_{n})})
+![](http://latex.codecogs.com/gif.latex?P(sentence)\newline=P(w_1\cdot{w_2}\cdots{w_n})\newline=P(w_n|w_1\cdots{w_{n-1}})\cdot{P(w_1\cdots{w_{n-1}})}\newline=P(w_n|w_1\cdots{w_{n-1}})\cdot{P(w_{n-1}|w_1\cdots{w_{n-2}})}\cdot{P(w_1\cdots{w_{n-2}})}\newline=P(w_{n}|w_1\cdots{w_{n-1}})\cdot{P(w_{n-1}|w_{1}\cdots{w_{n-2}})}\cdot{P(w_{n-2}|w_1\cdots{w_{n-1}})}\cdots{P(w_2|w_1)\cdot{P(w_1)}}\newline=P(w_1)\cdot{P(w_2|w_1)}\cdot{P(w_3|w_2)}\cdot{P(w_4|w_3)}\cdots{P(w_{n-1}|w_{n})})
 
 又根据贝叶斯公式：
 
