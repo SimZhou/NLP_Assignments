@@ -28,7 +28,7 @@
 
 2-gram模型假设一句句子中的每一个词的出现依赖且仅依赖于上一个词，因此有：
 
-![](http://latex.codecogs.com/gif.latex?\\P(sentence)\\=P(w_1\cdot{w_2}\cdots{w_n})\\=P(w_n|w_1\cdots{w_{n-1}})\cdot{P(w_1\cdots{w_{n-1}})}\\=P(w_n|w_1\cdots{w_{n-1}})\cdot{P(w_{n-1}|w_1\cdots w_{n-2})}\cdot{P(w_1\cdots{w_{n-2}})}\\=P(w_{n}|w_1\cdots{w_{n-1}})\cdot{P(w_{n-1}|w_{1}\cdots{w_{n-2}})}\cdot{P(w_{n-2}|w_1\cdots{w_{n-1}})}\cdots{P(w_2|w_1)\cdot{P(w_1)}}\\=P(w_1)\cdot{P(w_2|w_1)}\cdot{P(w_3|w_2)}\cdot{P(w_4|w_3)}\cdots{P(w_{n-1}|w_{n})})
+![](http://latex.codecogs.com/gif.latex?\\P(sentence)\\=P(w_1\cdot{w_2}\cdots{w_n})\\=P(w_n|w_1\cdots{w_{n-1}})\cdot{P(w_1\cdots{w_{n-1}})}\\=P(w_n|w_1\cdots{w_{n-1}})\cdot{P(w_{n-1}|w_1\cdots{w_{n-2}})}\cdot{P(w_1\cdots{w_{n-2}})}\\=P(w_{n}|w_1\cdots{w_{n-1}})\cdot{P(w_{n-1}|w_{1}\cdots{w_{n-2}})}\cdot{P(w_{n-2}|w_1\cdots{w_{n-1}})}\cdots{P(w_2|w_1)\cdot{P(w_1)}}\\=P(w_1)\cdot{P(w_2|w_1)}\cdot{P(w_3|w_2)}\cdot{P(w_4|w_3)}\cdots{P(w_{n-1}|w_{n})})
 
 又根据贝叶斯公式：
 
@@ -38,7 +38,7 @@
 
 ![](http://latex.codecogs.com/gif.latex?\\P(sentence)=P(w_1\cdot{w_2}\cdots{w_n})=\prod_{i=1}^{n-1}\frac{count(w_i,w_{i+1})}{count(w_i)}\times{P(w_1)})
 
-其中，![](http://latex.codecogs.com/gif.latex?\\count(w_i, w_{i+1})) 即为前后两个词同时出现的次数，对应的token就是将语料库中所有1-gram token前后两两结合，比如[“我”，“喜欢”，“游泳”]就变成了[“我喜欢”，“喜欢游泳”]。
+其中，![](http://latex.codecogs.com/gif.latex?\\count(w_i,w_{i+1})) 即为前后两个词同时出现的次数，对应的token就是将语料库中所有1-gram token前后两两结合，比如[“我”，“喜欢”，“游泳”]就变成了[“我喜欢”，“喜欢游泳”]。
 
 具体实现方式为：
 
