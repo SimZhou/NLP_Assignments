@@ -10,7 +10,7 @@ Assignments & notes of NLP Course by Kaikeba
 
 #### [第1节 基于语法树和概率的AI模型](https://github.com/SimZhou/NLP_Assignments/tree/master/Assignment01)
 
-#### [第2节 机器学习的初步介绍，简单的线性回归问题时间，梯度下降的介绍]()
+#### [第2节 BFS和DFS、以及机器学习初步](https://github.com/SimZhou/NLP_Assignments/tree/master/Assignment02)
 
 更新中……
 
