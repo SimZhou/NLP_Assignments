@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            margin-top: 5%;
+        }
+        .tab-container{
+            min-height: 300px;
+        }
+        /* .home-container{
+            margin-top: 5%;
+        } */
+        .title{
+            background-color: chartreuse;
+            height: 30px;
+        }
+        .text{
+            min-height: 240px;
+            margin-top: 30px;
+            background-color: blueviolet;
+        }
+        #abstract{
+            min-height: 300px;
+            background-color: chocolate
+        }
+        .btn-abstract{
+            margin-top: 30px;
+            margin-left:46%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home">主页</a></li>
+        <li><a href="#principle">原理</a></li>
+        <li><a href="#code">源码</a></li>
+        <li><a href="#constribution">贡献者</a></li>
+    </ul>
+    <div class="container">
+        <div class="home-container tab-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="acticle">
+                    <div class="title" , id="textbox_title">
+                        <textarea id="inputTitle" dir="auto" class="input__title__area" placeholder="请输入文章标题（可选）"></textarea>
+                    </div>
+                    <div class="text" , id="textbox_content">
+                        <textarea id="inputContent" dir="auto" class="input__content__area" placeholder="请输入文章正文"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="abstract"><h4></h4></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="aaaaaa">
+                    <button id="submitbt" type="button" class="btn btn-primary btn-abstract">生成摘要</button>
+                </div>
+            </div>
+        </div>
+        <div class="principle-container tab-container" style="display: none">
+            <div class="row">
+                principle-container
+            </div>
+        </div>
+        <div class="code-container tab-container" style="display: none">
+            <div class="row">
+                code-container
+            </div>
+        </div>
+        <div class="constribution-container tab-container" style="display: none">
+            <div class="row">
+                constribution-1
+            </div>
+            <div class="row">
+                constribution-2
+            </div>
+            <div class="row">
+                constribution-3
+            </div>
+            <div class="row">
+                constribution-4
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+$(document).ready(function() {
+    //$(".tab-container").height(window.outerHeight-100)
+    $(".nav-tabs li").click(function() {
+        $(".nav-tabs li").removeClass("active")
+        $(this).addClass("active")
+        var href_val = $(this).find("a").attr("href").split("#")[1]
+        var container = href_val + "-container"
+        $(".tab-container").hide();
+        $("." + container).show();
+    })
+
+    $("#submitbt").click(function(){
+        $.post("/testPost", { "title": $("#inputTitle").val(), "content": $("#inputContent").val() },
+            function(data, status) {
+                $("div#abstract h4").html(data);
+                // alert("数据：" + data + "\n状态：" + status);
+            });
+    });
+})
+
+</script>
+
+</html>
