@@ -6,7 +6,7 @@ NLP学习笔记
 
 ## 目录
 
-#### [Main Course: 人工智能第五期NLP](https://github.com/SimZhou/NLP_Assignments/01_NLP_Main_Course) - By Kaikeba
+#### [Main Course: 人工智能第五期NLP](https://github.com/SimZhou/NLP_Assignments/tree/master/01_NLP_Main_Course) - By Kaikeba
 
 
 
