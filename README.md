@@ -1,24 +1,18 @@
 # NLP_Assignments
 
-Assignments & notes of NLP Course by Kaikeba
-
-这个repository装的是Kaikeba第五期人工智能NLP课程的作业
+NLP学习笔记
 
 
 
 ## 目录
 
-#### [第1节 基于语法树和概率的AI模型](https://github.com/SimZhou/NLP_Assignments/tree/master/Assignment01)
+#### [Main Course: 人工智能第五期NLP](https://github.com/SimZhou/NLP_Assignments/01_NLP_Main_Course) - By Kaikeba
 
-#### [第2节 BFS和DFS、以及机器学习初步](https://github.com/SimZhou/NLP_Assignments/tree/master/Assignment02)
 
-#### [第3节 机器学习及模型评价初步](https://github.com/SimZhou/NLP_Assignments/tree/master/Assignment03)
 
-#### 第4节 神经网络及其训练算法介绍
+#### [Algorithms: Design and Analysis](https://github.com/SimZhou/NLP_Assignments/NLP_Main_Course/02_Algorithms_Design_and_Analysis) - By Stanford University ([Course Link](https://lagunita.stanford.edu/courses/course-v1:Engineering+Algorithms1+SelfPaced/course/))
 
-#### 第5节 Word Embedding与词向量
 
-#### 项目1 非监督文本自动摘要模型的构建
 
 更新中……
 
