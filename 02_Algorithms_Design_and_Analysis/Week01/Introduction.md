@@ -40,3 +40,48 @@ Let n be the length of input number x&y. Normally if we calculate the partial pr
 
 ### New algo for Integer Multiplication: Karatsuba Multiplication
 
+(Not really understanding what's happening here, just some kind of magical operations...)
+
+recursive programing
+
+
+
+### About the Course
+
+Tim introduced about the course topics, which includes:
+
+- Vocabulary for algorithms, e.g. Big-Oh, ...
+- Algorithm design paradigms, Divide-and-Conquer
+  - IM, sorting, matrix multi
+  - Master method...
+- Randomization
+- Primitives for reasoning about graphs
+- Data structure
+  - Heaps, balanced binary search trees, hashing and some variants(e.g. bloom filters)
+
+Sequel Courses: 
+
+- Greedy algorithms
+- Dynamic programming
+- NP-complete problems
+- ...
+
+Skill: 
+
+- better programmer
+- better mathematical/analytical skills
+- think algorithmically
+
+No required books but recommended ones are: 
+
+- Kleinberg/Tardos, *Algorithm Design*, 2005. 
+- Dasgupta/Papadimitriou/Vazirani, Algorithms, 2006. 
+- Cormen/Leiserson/Rivest/Stein, *Introduction to Algorithms*, 2009 (3rd ed). 
+- Mehlhorn/Sanders, *Data Structures and Algorithms: The Basic Toolboox*, 2008. 
+
+
+
+### Merge Sort
+
+![](https://uricc.ga/images/2019/12/13/_20191214094220.png)
+
