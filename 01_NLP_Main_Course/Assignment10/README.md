@@ -41,7 +41,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 
 例：文档分类
 
-![](https://uricc.ga/images/2019/12/13/_20191213164304.png)
+![](http://uricc.ga/images/2019/12/13/_20191213164304.png)
 
 在用朴素贝叶斯进行文档分类的例子中，由于词库中某些词可能在句子中没有出现，产生条件概率为0的情况，因此对于所有词的初始词频默认为1（而不是0）（Add 1 smoothing）
 
@@ -69,8 +69,56 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 
 ### 3. SVM
 
-> 拉格朗日乘子法：
+> 拉格朗日乘子法，用于解决条件约束优化问题。
 >
-> f(x), h(x), 求 min f(x)  *subject to*  h(x)=0
+> **Equility constraints:**
 >
-> 令L = f(x) + λh(x), 
+> ​	f(x), h(x), 求 min f(x)  *subject to*  h(x) = 0
+>
+> ​	令L = f(x) + λh(x), 
+>
+> ​	然后L对 x 和 λ 分别求偏导并令它们都等于 0，即可得到最优解
+>
+> ​	**实际意义为：对x求偏导为零，即等同于切线平行：![](http://latex.codecogs.com/gif.latex?\frac{\partial f}{\partial x} = -\lambda\cdot\frac{\partial h}{\partial x})**
+>
+> ​    					   **对λ求偏导，即等同于满足约束条件：![](http://latex.codecogs.com/gif.latex?h(x)=0)**
+>
+> ​	详细解释见3B1B视频：
+>
+> <iframe width="560" height="315" src="https://www.youtube.com/embed/yuqB-d5MjZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+>
+> **Inequility constrains:** 
+>
+> ​	f(x), h(x), 求 min f(x)  *subject to*  g(x) ≤ 0
+>
+> ​    若最小值点就在约束范围内，则约束条件相当于没有用
+>
+> ​    若最小值点在约束范围边界上，则约束条件需满足：
+>
+> ​    	f与g梯度方向相反：-▽f(x) = u·▽·g(x)
+>
+> ​		u ≥ 0
+>
+> ​        g(x) ≤ 0
+>
+> ​		u·g(x) = 0
+>
+> 
+>
+> **KKT条件：**
+>
+> ​	把等式约束和不等式约束加到一起，则
+
+
+
+
+
+
+
+
+
+
+
+Lagrange Multiplier 这块详细可参考：https://blog.csdn.net/fkyyly/article/details/86488582
+
+### 4. 随机森林
