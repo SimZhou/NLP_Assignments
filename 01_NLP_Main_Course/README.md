@@ -28,7 +28,7 @@ Assignments & notes of NLP Course by Kaikeba
 
 #### [第10节 机器学习算法（k-means，svm，贝叶斯，随机森林，xgboost等）](https://github.com/SimZhou/NLP_Assignments/tree/master/01_NLP_Main_Course/Assignment10)
 
-#### [项目1 非监督文本自动摘要模型的构建]
+#### [项目1 非监督文本自动摘要模型的构建](http://39.100.3.165:10086/)
 
 更新中……
 

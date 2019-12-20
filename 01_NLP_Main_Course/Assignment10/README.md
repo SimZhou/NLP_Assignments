@@ -1,4 +1,4 @@
-## 第10节 机器学习算法（贝叶斯，k-means，SVM，随机森林，XGBoost 等）
+第10节 机器学习算法（贝叶斯，k-means，SVM，随机森林，XGBoost 等）
 
 这一节主要学习了：经典机器学习中的贝叶斯方法，K-means，SVM；集成学习中的随机森林，XGBoost
 
@@ -69,13 +69,15 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 
 ### 3. SVM
 
-> 拉格朗日乘子法，用于解决条件约束优化问题。
+> 前置知识：拉格朗日乘子法，用于解决条件约束优化问题。<br>
+>
+>  
 >
 > **Equility constraints:**
 >
-> ​	f(x), h(x), 求 min f(x)  *subject to*  h(x) = 0
+> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in R}f(x)\quad\text{s.t. }h(x)=0)
 >
-> ​	令L = f(x) + λh(x), 
+> ​	令![](http://latex.codecogs.com/gif.latex?L=f(x)+\lambda\cdot h(x)),
 >
 > ​	然后L对 x 和 λ 分别求偏导并令它们都等于 0，即可得到最优解
 >
@@ -83,42 +85,142 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 >
 > ​    					   **对λ求偏导，即等同于满足约束条件：![](http://latex.codecogs.com/gif.latex?h(x)=0)**
 >
-> ​	详细解释见3B1B视频：
+> ​	详解见3B1B youtube视频：[Lagrange multipliers, using tangency to solve constrained optimization](https://www.youtube.com/embed/yuqB-d5MjZA)
 >
-> <iframe width="560" height="315" src="https://www.youtube.com/embed/yuqB-d5MjZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+>  
 >
 > **Inequility constrains:** 
 >
-> ​	f(x), h(x), 求 min f(x)  *subject to*  g(x) ≤ 0
+> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in R}f(x)\quad\text{s.t. }g(x)\leq0)
 >
-> ​    若最小值点就在约束范围内，则约束条件相当于没有用
+> ​	令![](http://latex.codecogs.com/gif.latex?L=f(x)+\lambda\cdot g(x))
 >
-> ​    若最小值点在约束范围边界上，则约束条件需满足：
+> ​    若最小值点就在约束范围内，则约束条件相当于没有用，
 >
-> ​    	f与g梯度方向相反：-▽f(x) = u·▽·g(x)
+> ​    若最小值点在约束范围边界上，则约束条件起作用：
 >
-> ​		u ≥ 0
+> ​    	f与g梯度方向相反：![](http://latex.codecogs.com/gif.latex?-\nabla f(x)=u\cdot\nabla g(x)) （即求偏导）且  ![](http://latex.codecogs.com/gif.latex?u\ge 0)
 >
-> ​        g(x) ≤ 0
+> ​        约束条件：![](http://latex.codecogs.com/gif.latex?g(x)\le 0)
 >
-> ​		u·g(x) = 0
+> ​		![](http://latex.codecogs.com/gif.latex?u\cdot g(x)=0) （u=0，则最小值点在约束范围内，约束不成立；g(x)=0 则约束条件成立）
 >
-> 
+>   
 >
 > **KKT条件：**
 >
-> ​	把等式约束和不等式约束加到一起，则
+> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in R}f(x)\quad\text{s.t. }f(x)=0,\ g(x)\leq0)
+>
+> ​	把等式约束和不等式约束加到一起，则满足以下条件的点就是极值点：
+>
+> ​		![](http://latex.codecogs.com/gif.latex?\nabla_{x}L=0)
+>
+> ​		![](http://latex.codecogs.com/gif.latex?\mu\cdot g(x)=0)
+>
+> ​		![](http://latex.codecogs.com/gif.latex?h(x)=0)
+>
+> ​		![](http://latex.codecogs.com/gif.latex?g(x)\leq 0)
+>
+> ​		![](http://latex.codecogs.com/gif.latex?\mu\geq 0)
+>
+>  
+>
+> (这一部分还需消化理解，详见 *Convex Optimization* 第6章：对偶问题，以及博客：[link](https://blog.csdn.net/fkyyly/article/details/86488582))
+
+SVM 的目的是最大化间隔，即
+
+#### Kernel Trick
+
+使用非线性函数将数据打到高维空间，使之在高维空间线性可分：
+
+![Kernal Trick](http://uricc.ga/images/2019/12/20/_20191220115256.png)
 
 
 
+#### SVM的优缺点
+
+优点：
+
+- 凸优化给予**全局最优**
+- 用**核技巧**可以处理**非线性数据**
+
+- 维度灾难还好 https://www.quora.com/Does-SVM-suffer-from-the-curse-of-dimensionality-If-so-how-does-SVM-overcome-it
+- 可解释
+
+缺点：
+
+- 计算复杂度高（需要遍历所有样本点）
+- 本质上是二分类模型，对多分类问题效果不会特别好（尽管有技巧让它可以用于多分类例如one-to-many）
 
 
 
+### 4. 集成学习（Ensemble Learning）
+
+> 集成学习的思想是训练多个模型，然后通过投票的方式获取多数模型赞同的预测，以获得更好的结果。
+>
+> 集成学习的分类有：
+>
+> **Bagging：每次通过Bootstrap方式训练一个分类器，各分类器相互独立**
+>
+> ![](http://uricc.ga/images/2019/12/20/bagging.png)
+>
+> **Boosting：每次训练出的模型的学习效果不好的部分，都会提升下一次模型的效果**
+>
+> ![](http://uricc.ga/images/2019/12/20/boosting.png)
+
+#### 4.1 随机森林
+
+随机森林算法的过程：
+
+> 训练集 S := (x1, y1),...,(xn, yn)，特征空间 F，决策树数目 B. 
+>
+> **function RandomForest(S, F)**
+>
+> ​		H ← 0
+>
+> ​		**for** i ∈ 1, ..., B **do**
+>
+> ​				S(i) ← A bootstrap sample from S
+>
+> ​				h(i) ← RandomizedTreeLearn(S(i), F)
+>
+> ​				H ← H ∪ {h(i)}
+>
+> ​		**end for**
+>
+> ​		**return H**
+>
+> **end function**
+>
+> **function RandomizedTreeLearn(S, F)**
+>
+> ​		At each node:
+>
+> ​				f ← very small subset of F
+>
+> ​				Split on best feature in f
+>
+> ​		**return The learned tree**
+>
+> **end function**
+
+随机的体现：
+
+- 样本随机取得（bootstrap有放回抽样）
+- 特征的随机取得（每棵树只选取一部分特征，比如t个特征）
 
 
 
+#### 4.2 XGBoost
 
+> 预备知识：回归树
+>
+> ​	test样本的y值，取的是最后叶子节点中train样本的y值的平均；
+>
+> ​	选择分类点时，用的不是信息增益，而是最小化类间方差
 
-Lagrange Multiplier 这块详细可参考：https://blog.csdn.net/fkyyly/article/details/86488582
+**目标函数：**![](http://latex.codecogs.com/gif.latex?Obj=\sum_{i=1}^{n}l(y_i, \hat{y}_i)+\sum_{k=1}^{K}\Omega(f_k))
 
-### 4. 随机森林
+其中，![](http://latex.codecogs.com/gif.latex?l)为loss，![](http://latex.codecogs.com/gif.latex?\Omega)为正则化项
+
+参考：[机器学习--boosting家族之XGBoost算法](https://www.cnblogs.com/zongfa/p/9324684.html)，[XGBoost 的前世今生](https://blog.csdn.net/zww275250/article/details/78652522)，[COS 访谈第 18 期：陈天奇](https://blog.csdn.net/hemeinvyiqiluoben/article/details/87870656)
