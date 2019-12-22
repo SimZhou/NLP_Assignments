@@ -6,7 +6,7 @@
 
 > Recap of probability theory:
 >
-> Independency Assumption:![](http://latex.codecogs.com/gif.latex?P(A\cap{B})=P(A)\cdot P(B))
+> Independency Assumption:![](http://latex.codecogs.com/gif.latex?P(A\cap{B})=P(A)\cdot{P(B)})
 >
 > Rule of Total Probability: ![](http://latex.codecogs.com/gif.latex?P(A)=\sum_i{P(A|B_i)\cdot{P(B_i)}})
 >
@@ -16,7 +16,7 @@
 
 后验概率：*事情已经发生，要求这件事情发生的原因是由某个因素引起的可能性的大小*
 
-![](http://latex.codecogs.com/gif.latex?P(A|B)=\frac{P(A\cap{B})}{P(B)}=\frac{P(B|A)\cdot P(A)}{P(B)})
+![](http://latex.codecogs.com/gif.latex?P(A|B)=\frac{P(A\cap{B})}{P(B)}=\frac{P(B|A)\cdot{P(A)}}{P(B)})
 
 #### 1.1 Maximum a Posterior（极大后验概率）、Maximum Likelihood（极大似然估计）
 
@@ -35,7 +35,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 
 朴素贝叶斯分类器，是一个生成模型，对于每一种分类，它都可以生成一个后验概率
 
-![](http://latex.codecogs.com/gif.latex?h_{y=y_0,{MAP}}\\=\arg\max_{h\in{H}}P(y=y_0|a_1,a_2,a_3,...)\\=\arg\max_{h\in{H}}\frac{P(a_1,a_2,a_3,...|y=y_0)\cdot P(y=y_0)}{P(a_1,a_2,...)}\\=\arg\max_{h\in{H}}{P(a_1,a_2,a_3,...|y=y_0)\cdot P(y=y_0)}\\=\arg\max_{h\in{H}}{P(a_1|y_0)\cdot{P(a_2|y_0)}\cdot{P(a_3|y_0)}\cdots{P(y=y_0)}}(According to "Naive"hypothesis))
+![](http://latex.codecogs.com/gif.latex?h_{y=y_0,{MAP}}\\=\arg\max_{h\in{H}}P(y=y_0|a_1,a_2,a_3,...)\\=\arg\max_{h\in{H}}\frac{P(a_1,a_2,a_3,...|y=y_0)\cdot{P(y=y_0)}}{P(a_1,a_2,...)}\\=\arg\max_{h\in{H}}{P(a_1,a_2,a_3,...|y=y_0)\cdot P(y=y_0)}\\=\arg\max_{h\in{H}}{P(a_1|y_0)\cdot{P(a_2|y_0)}\cdot{P(a_3|y_0)}\cdots{P(y=y_0)}}) (According to "Naive"hypothesis)
 
 然后我们同样可以求出![](http://latex.codecogs.com/gif.latex?h_{y=y_1}), ![](http://latex.codecogs.com/gif.latex?h_{y=y_2}), ...。最后y的估计值就是使h得到最大值所对于的y值。
 
@@ -75,7 +75,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 >
 > **Equility constraints:**
 >
-> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in{R}}f(x)\quad\text{s.t. }h(x)=0)
+> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in{R}}f(x)\quad\text{s.t.}h(x)=0)
 >
 > ​	令![](http://latex.codecogs.com/gif.latex?L=f(x)+\lambda\cdot{h(x)}),
 >
@@ -91,7 +91,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 >
 > **Inequility constrains:** 
 >
-> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in{R}}f(x)\quad\text{s.t. }g(x)\leq0)
+> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in{R}}f(x)\quad\text{s.t.}g(x)\leq0)
 >
 > ​	令![](http://latex.codecogs.com/gif.latex?L=f(x)+\lambda\cdot{g(x)})
 >
@@ -101,7 +101,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 >
 > ​    	f与g梯度方向相反：![](http://latex.codecogs.com/gif.latex?-\nabla{f(x)}=u\cdot\nabla{g(x)}) （即求偏导）且  ![](http://latex.codecogs.com/gif.latex?u\ge{0})
 >
-> ​        约束条件：![](http://latex.codecogs.com/gif.latex?g(x)\le 0)
+> ​        约束条件：![](http://latex.codecogs.com/gif.latex?g(x)\le{0})
 >
 > ​		![](http://latex.codecogs.com/gif.latex?u\cdot{g(x)}=0) （u=0，则最小值点在约束范围内，约束不成立；g(x)=0 则约束条件成立）
 >
@@ -109,7 +109,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 >
 > **KKT条件：**
 >
-> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in{R}}f(x)\quad\text{s.t. }f(x)=0,\ g(x)\leq0)
+> ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in{R}}f(x)\quad\text{s.t.}f(x)=0,\quad{g(x)}\leq0)
 >
 > ​	把等式约束和不等式约束加到一起，则满足以下条件的点就是极值点：
 >
@@ -119,7 +119,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 >
 > ​		![](http://latex.codecogs.com/gif.latex?h(x)=0)
 >
-> ​		![](http://latex.codecogs.com/gif.latex?g(x)\leq 0)
+> ​		![](http://latex.codecogs.com/gif.latex?g(x)\leq{0})
 >
 > ​		![](http://latex.codecogs.com/gif.latex?\mu\geq{0}})
 >
