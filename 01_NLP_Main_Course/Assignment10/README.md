@@ -35,9 +35,9 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 
 朴素贝叶斯分类器，是一个生成模型，对于每一种分类，它都可以生成一个后验概率
 
-![](http://latex.codecogs.com/gif.latex?h_{y=y_0,{MAP}}\\=\arg\max_{h\in{H}}P(y=y_0|a_1,a_2,a_3,\cdots)\newline=\arg\max_{h\in{H}}\frac{P(a_1,a_2,a_3,\cdots|y=y_0)\cdot{P(y=y_0)}}{P(a_1,a_2,\cdots)}\newline=\arg\max_{h\in{H}}{P(a_1,a_2,a_3,\cdots|y=y_0)\cdot{P}(y=y_0)}\newline=\arg\max_{h\in{H}}{P(a_1|y_0)\cdot{P(a_2|y_0)}\cdot{P(a_3|y_0)}\cdots{P(y=y_0)}}) 
+![](http://latex.codecogs.com/gif.latex?h_{y=y_0,{MAP}}\\=\arg\max_{h\in{H}}P(y=y_0|a_1,a_2,a_3,\cdots)\newline=\arg\max_{h\in{H}}\frac{P(a_1,a_2,a_3,\cdots|y=y_0)\cdot{P(y=y_0)}}{P(a_1,a_2,\cdots)}\newline=\arg\max_{h\in{H}}{P(a_1,a_2,a_3,\cdots|y=y_0)\cdot{P}(y=y_0)}\newline=\arg\max_{h\in{H}}{P(a_1|y_0)\cdot{P(a_2|y_0)}\cdot{P(a_3|y_0)}\cdots{P(y=y_0)}})
 
-(According to "Naive"hypothesis)
+(Last step according to "Naive" hypothesis)
 
 然后我们同样可以求出![](http://latex.codecogs.com/gif.latex?h_{y=y_1}), ![](http://latex.codecogs.com/gif.latex?h_{y=y_2}), ...。最后y的估计值就是使h得到最大值所对于的y值。
 
@@ -227,5 +227,5 @@ SVM 的目的是最大化间隔，即
 
 其中 ![](http://latex.codecogs.com/gif.latex?\Omega(f)=\gamma{T}+\frac{1}{2}\lambda\sum_{j=1}^{T}w_j^{2})，![](http://latex.codecogs.com/gif.latex?T)代表叶子节点的个数，![](http://latex.codecogs.com/gif.latex?w)代表叶子节点的分数，分别由![](http://latex.codecogs.com/gif.latex?\gamma)和![](http://latex.codecogs.com/gif.latex?\lambda)控制。
 
-参考：[机器学习--boosting家族之XGBoost算法](https://www.cnblogs.com/zongfa/p/9324684.html)，[XGBoost 的前世今生](https://blog.csdn.net/zww275250/article/details/78652522)，[COS 访谈第 18 期：陈天奇](https://blog.csdn.net/hemeinvyiqiluoben/article/details/87870656)，[XGBoost官方文档](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)
+参考：[机器学习--boosting家族之XGBoost算法](https://www.cnblogs.com/zongfa/p/9324684.html)，[XGBoost 的前世今生](https://blog.csdn.net/zww275250/article/details/78652522)，[COS 访谈第 18 期：陈天奇](https://blog.csdn.net/hemeinvyiqiluoben/article/details/87870656)，[XGBoost官方文档](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)，[NLP-LOVE的XGBoost介绍](https://github.com/NLP-LOVE/ML-NLP/blob/master/Machine Learning/3.3 XGBoost/3.3 XGBoost.md)
 
