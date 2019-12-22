@@ -10,17 +10,17 @@
 >
 > Rule of Total Probability: ![](http://latex.codecogs.com/gif.latex?P(A)=\sum_i{P(A|B_i)\cdot{P(B_i)}})
 >
-> Bayes' Rule: ![](http://latex.codecogs.com/gif.latex?P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{P(B|A)\cdot P(A)}{P(B)})
+> Bayes' Rule: ![](http://latex.codecogs.com/gif.latex?P(A|B)=\frac{P(A\cap{B})}{P(B)}=\frac{P(B|A)\cdot{P(A)}}{P(B)})
 
 先验概率：*指根据以往经验和分析得到的概率*
 
 后验概率：*事情已经发生，要求这件事情发生的原因是由某个因素引起的可能性的大小*
 
-![](http://latex.codecogs.com/gif.latex?P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{P(B|A)\cdot P(A)}{P(B)})
+![](http://latex.codecogs.com/gif.latex?P(A|B)=\frac{P(A\cap{B})}{P(B)}=\frac{P(B|A)\cdot P(A)}{P(B)})
 
 #### 1.1 Maximum a Posterior（极大后验概率）、Maximum Likelihood（极大似然估计）
 
-![](http://latex.codecogs.com/gif.latex?h_{MAP}=\arg\max_{h\in{H}}P(h|D)=\arg\max_{h\in H}P(D|h)P(h))
+![](http://latex.codecogs.com/gif.latex?h_{MAP}=\arg\max_{h\in{H}}P(h|D)=\arg\max_{h\in{H}}P(D|h)P(h))
 
 ![](http://latex.codecogs.com/gif.latex?h_{ML}=\arg\max_{h\in{H}}P(D|h))
 
@@ -35,7 +35,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 
 朴素贝叶斯分类器，是一个生成模型，对于每一种分类，它都可以生成一个后验概率
 
-![](http://latex.codecogs.com/gif.latex?h_{y=y_0,{MAP}}\\=\arg\max_{h\in{H}}P(y=y_0|a_1,a_2,a_3,...)\\=\arg\max_{h\in H}\frac{P(a_1,a_2,a_3,...|y=y_0)\cdot P(y=y_0)}{P(a_1,a_2,...)}\\=\arg\max_{h\in H}{P(a_1,a_2,a_3,...|y=y_0)\cdot P(y=y_0)}\\=\arg\max_{h\in H}{P(a_1|y_0)\cdot P(a_2|y_0)\cdot P(a_3|y_0)\cdots P(y=y_0)}(According to "Naive"hypothesis))
+![](http://latex.codecogs.com/gif.latex?h_{y=y_0,{MAP}}\\=\arg\max_{h\in{H}}P(y=y_0|a_1,a_2,a_3,...)\\=\arg\max_{h\in{H}}\frac{P(a_1,a_2,a_3,...|y=y_0)\cdot P(y=y_0)}{P(a_1,a_2,...)}\\=\arg\max_{h\in{H}}{P(a_1,a_2,a_3,...|y=y_0)\cdot P(y=y_0)}\\=\arg\max_{h\in{H}}{P(a_1|y_0)\cdot{P(a_2|y_0)}\cdot{P(a_3|y_0)}\cdots{P(y=y_0)}}(According to "Naive"hypothesis))
 
 然后我们同样可以求出![](http://latex.codecogs.com/gif.latex?h_{y=y_1}), ![](http://latex.codecogs.com/gif.latex?h_{y=y_2}), ...。最后y的估计值就是使h得到最大值所对于的y值。
 
@@ -77,7 +77,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 >
 > ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in{R}}f(x)\quad\text{s.t. }h(x)=0)
 >
-> ​	令![](http://latex.codecogs.com/gif.latex?L=f(x)+\lambda\cdot h(x)),
+> ​	令![](http://latex.codecogs.com/gif.latex?L=f(x)+\lambda\cdot{h(x)}),
 >
 > ​	然后L对 x 和 λ 分别求偏导并令它们都等于 0，即可得到最优解
 >
@@ -93,7 +93,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 >
 > ​	![](http://latex.codecogs.com/gif.latex?\min_{x\in{R}}f(x)\quad\text{s.t. }g(x)\leq0)
 >
-> ​	令![](http://latex.codecogs.com/gif.latex?L=f(x)+\lambda\cdot g(x))
+> ​	令![](http://latex.codecogs.com/gif.latex?L=f(x)+\lambda\cdot{g(x)})
 >
 > ​    若最小值点就在约束范围内，则约束条件相当于没有用，
 >
