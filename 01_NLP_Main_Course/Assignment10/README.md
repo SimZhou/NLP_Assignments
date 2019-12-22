@@ -221,6 +221,9 @@ SVM 的目的是最大化间隔，即
 
 **目标函数：**![](http://latex.codecogs.com/gif.latex?Obj=\sum_{i=1}^{n}l(y_i, \hat{y}_i)+\sum_{k=1}^{K}\Omega(f_k))
 
-其中，![](http://latex.codecogs.com/gif.latex?l)为loss，![](http://latex.codecogs.com/gif.latex?\Omega)为正则化项
+其中，![](http://latex.codecogs.com/gif.latex?l)为loss；![](http://latex.codecogs.com/gif.latex?\Omega)为正则化项，表示树的复杂度函数。
+
+其中 ![](http://latex.codecogs.com/gif.latex?\Omega(f)=\gamma T+\frac{1}{2}\lambda\sum_{j=1}^{T}w_j^{2})，![](http://latex.codecogs.com/gif.latex?T)代表叶子节点的个数，![](http://latex.codecogs.com/gif.latex?w)代表叶子节点的分数，分别由![](http://latex.codecogs.com/gif.latex?\gamma)和![](http://latex.codecogs.com/gif.latex?\lambda)控制。
 
 参考：[机器学习--boosting家族之XGBoost算法](https://www.cnblogs.com/zongfa/p/9324684.html)，[XGBoost 的前世今生](https://blog.csdn.net/zww275250/article/details/78652522)，[COS 访谈第 18 期：陈天奇](https://blog.csdn.net/hemeinvyiqiluoben/article/details/87870656)
+
