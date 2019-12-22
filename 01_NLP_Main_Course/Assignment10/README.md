@@ -1,4 +1,4 @@
-第10节 机器学习算法（贝叶斯，k-means，SVM，随机森林，XGBoost 等）
+## 第10节 机器学习算法（贝叶斯，k-means，SVM，随机森林，XGBoost 等）
 
 这一节主要学习了：经典机器学习中的贝叶斯方法，K-means，SVM；集成学习中的随机森林，XGBoost
 
@@ -225,5 +225,5 @@ SVM 的目的是最大化间隔，即
 
 其中 ![](http://latex.codecogs.com/gif.latex?\Omega(f)=\gamma T+\frac{1}{2}\lambda\sum_{j=1}^{T}w_j^{2})，![](http://latex.codecogs.com/gif.latex?T)代表叶子节点的个数，![](http://latex.codecogs.com/gif.latex?w)代表叶子节点的分数，分别由![](http://latex.codecogs.com/gif.latex?\gamma)和![](http://latex.codecogs.com/gif.latex?\lambda)控制。
 
-参考：[机器学习--boosting家族之XGBoost算法](https://www.cnblogs.com/zongfa/p/9324684.html)，[XGBoost 的前世今生](https://blog.csdn.net/zww275250/article/details/78652522)，[COS 访谈第 18 期：陈天奇](https://blog.csdn.net/hemeinvyiqiluoben/article/details/87870656)
+参考：[机器学习--boosting家族之XGBoost算法](https://www.cnblogs.com/zongfa/p/9324684.html)，[XGBoost 的前世今生](https://blog.csdn.net/zww275250/article/details/78652522)，[COS 访谈第 18 期：陈天奇](https://blog.csdn.net/hemeinvyiqiluoben/article/details/87870656)，[XGBoost官方文档](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)
 
