@@ -35,7 +35,7 @@ where D is short for Data, H is the set of Hypothesises, h is a particular funct
 
 朴素贝叶斯分类器，是一个生成模型，对于每一种分类，它都可以生成一个后验概率
 
-![](http://latex.codecogs.com/gif.latex?h_{y=y_0,{MAP}}\\=\arg\max_{h\in{H}}P(y=y_0|a_1,a_2,a_3,...)\\=\arg\max_{h\in{H}}\frac{P(a_1,a_2,a_3,...|y=y_0)\cdot{P(y=y_0)}}{P(a_1,a_2,...)}\\=\arg\max_{h\in{H}}{P(a_1,a_2,a_3,...|y=y_0)\cdotP(y=y_0)}\\=\arg\max_{h\in{H}}{P(a_1|y_0)\cdot{P(a_2|y_0)}\cdot{P(a_3|y_0)}\cdots{P(y=y_0)}}) (According to "Naive"hypothesis)
+![](http://latex.codecogs.com/gif.latex?h_{y=y_0,{MAP}}\\=\arg\max_{h\in{H}}P(y=y_0|a_1,a_2,a_3,...)\\=\arg\max_{h\in{H}}\frac{P(a_1,a_2,a_3,...|y=y_0)\cdot{P(y=y_0)}}{P(a_1,a_2,...)}\\=\arg\max_{h\in{H}}{P(a_1,a_2,a_3,...|y=y_0)\cdot\,P(y=y_0)}\\=\arg\max_{h\in{H}}{P(a_1|y_0)\cdot{P(a_2|y_0)}\cdot{P(a_3|y_0)}\cdots{P(y=y_0)}}) (According to "Naive"hypothesis)
 
 然后我们同样可以求出![](http://latex.codecogs.com/gif.latex?h_{y=y_1}), ![](http://latex.codecogs.com/gif.latex?h_{y=y_2}), ...。最后y的估计值就是使h得到最大值所对于的y值。
 
