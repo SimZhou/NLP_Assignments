@@ -16,9 +16,9 @@
 
 然后根据语料库计算![](http://latex.codecogs.com/gif.latex?InverseDocumentFrequency(IDF)_{t}=log_{10}{\frac{N}{n_{t}}})
 
-最后![](http://latex.codecogs.com/gif.latex?w_{t,d} = TF_{t,d}\times{IDF_t})
+最后![](http://latex.codecogs.com/gif.latex?w_{t,d}=TF_{t,d}\times{IDF_t})
 
-**Note：**TF-IDF实际上也是句子/文章表征的一种形式，是一种词袋模型(Bag-of-Words)，即不考虑词语之间的顺序关系，而是简单粗暴地把它们装进一个袋子里面，作为句子/文章的特征。
+**Note:** TF-IDF实际上也是句子/文章表征的一种形式，是一种词袋模型(Bag-of-Words)，即不考虑词语之间的顺序关系，而是简单粗暴地把它们装进一个袋子里面，作为句子/文章的特征。
 
 TF-IDF的优点是效果其实还不错，缺点是语料库很大的话维度会非常大（语料库中token个数的维度）
 
@@ -30,9 +30,9 @@ TF-IDF的优点是效果其实还不错，缺点是语料库很大的话维度�
 
 ![](http://uricc.ga/images/2019/12/31/_20191231214446.png)
 
-**算法：**迭代
+**算法:** 迭代
 
-![](http://latex.codecogs.com/gif.latex?At\;t=0:PR(p_i,0) = \frac{1}{N})。意味着一开始用平均值初始化每个Page(i)的PageRank权重。
+![](http://latex.codecogs.com/gif.latex?At\;t=0:PR(p_i,0)=\frac{1}{N})。意味着一开始用平均值初始化每个Page(i)的PageRank权重。
 
 ![](http://latex.codecogs.com/gif.latex?At\;each\;time\;step:\;PR(Pi,t+1)=(1-d)+d*\sum_{j\in{In(P_i)}}{\frac{1}{|Out(P_j)|}PR(P_j,t)})。在每个新的time step, 某个Page(i)的新的权重等于【所有进入Page(i)的那些其他Pages的1/|出度|乘以它们自己的当前PR值】。
 
