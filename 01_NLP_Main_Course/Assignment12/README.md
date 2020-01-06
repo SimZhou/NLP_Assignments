@@ -57,9 +57,17 @@ TextRank与PageRank唯一的不同之处是多了edge之间的权重![](http://l
 
 
 
+### 4. 依存分析（Dependency Parsing）
+
+指的是语法和语义的依存关系的分析，一张图理解：
+
+![](http://uricc.ga/images/2020/01/06/_20200106151459.png)
+
+(作业中提取对话的方法：对句子做依存分析，然后提取句子里主谓关系中的谓语有代表“说”含义的句子，然后就可以找出 **XXX说XXX** 的句子了)
 
 
-### 分类和生成
+
+### 5. NLP任务：分类和生成
 
 1. 分类任务
 
@@ -71,7 +79,7 @@ TextRank与PageRank唯一的不同之处是多了edge之间的权重![](http://l
 
 2. 生成任务
 
-   机器翻译
+   机器翻译MT
 
    ​		Statistics + EM Algorithm (IBM 1)
 
@@ -81,7 +89,9 @@ TextRank与PageRank唯一的不同之处是多了edge之间的权重![](http://l
 
    ​		Transformer
 
-   问题回答
+   问题回答QA
 
+   ...
+   
    ​		
 
