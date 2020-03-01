@@ -61,4 +61,3 @@ Best_price(N) = max(P_N, Best_price(N-1) + Best_price(1), Best_price(N-2) + Best
 > ​	![](http://latex.codecogs.com/gif.latex?D(i,j)=\min\begin{cases}D(i-1,j)+1\\D(i,j-1)+1\\D(i-1,j-1)+2\quad{if\;{X(i)\;{!=Y(i)}}}\;{else}\;{D(i-1,j-1)}\end{cases})
 
 
-

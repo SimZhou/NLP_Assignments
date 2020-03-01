@@ -1,4 +1,4 @@
-# Algorithms: Design and Analysis
+#  Algorithms: Design and Analysis - Introduction
 
 Notes from Stanford Open-Course: 
 
@@ -83,5 +83,37 @@ No required books but recommended ones are:
 
 ### Merge Sort
 
-![](https://uricc.ga/images/2019/12/13/_20191214094220.png)
+![](http://uricc.ga/images/2019/12/13/_20191214094220.md.png)
 
+Claim: Merge sort requires ≤ 6nlogn + 6n operations to sort n numbers
+
+
+
+**Q1**: Roughly how many levels does this recursion tree have (as a function of n, the length of the input array)?
+
+**Ans**: 
+
+| n    | Level | n    | Level |
+| ---- | ----- | ---- | ----- |
+| 1    | 0     | 9    | 4     |
+| 2    | 1     | 10   | 4     |
+| 3    | 2     | 11   | 4     |
+| 4    | 2     | 12   | 4     |
+| 5    | 3     | 13   | 4     |
+| 6    | 3     | 14   | 4     |
+| 7    | 3     | 15   | 4     |
+| 8    | 3     | 16   | 4     |
+
+Levels needed for the recursive tree is approximated to be: ![](http://latex.codecogs.com/gif.latex?\log_{2}{n})
+
+**Q2**: At each level j=0,1,2,..,log2(n) there are _____ subproblems, each of size ______. 
+
+**Ans**: 
+
+| j    |      |      |      |      |      |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |

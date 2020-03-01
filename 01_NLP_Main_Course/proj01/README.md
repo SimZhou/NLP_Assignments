@@ -8,7 +8,7 @@
 
 ### 2. Method
 
-#### 2.1 Data source 
+#### 2.1 Data source
 
 中文的数据来源有两个：
 
